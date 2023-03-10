@@ -15,13 +15,65 @@
             </h2>
         </section>
 
-        <section class="create__todo">
+        <section class="create-todo">
             <h3>Criar tarefa</h3>
-            <form id="new__todo__form">
-                Qual é sua tarefa?
+            <form id="new-todo-form">
+                <h4>Qual é sua tarefa?</h4>
+                <input type="text" name="content" id="content" placeholder="limpar o quarto">
+                <h4>Escolha a categoria</h4>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="category" id="category1" value="business">
+                        <span class="bubble business"></span>
+                        <div>Trabalho</div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="category" id="category2" value="personal">
+                        <span class="bubble personal"></span>
+                        <div>Pessoal</div>
+                    </label>
+                </div>
+
+                <input type="submit" value="Criar">
             </form>
+        </section>
 
+        <section class="todo-list">
+            <h3>TODO LIST</h3>
+            <div class="list" id="todo-list">
+                <div class="todo-item">
+                    <label>
+                        <input type="checkbox">
+                        <span class="bubble business"></span>
 
+                    </label>
+                    <div class="todo-content">
+                        <input type="text" value="limpar o quarto" readonly>
+                    </div>
+
+                    <div class="actions">
+                        <button class="edit"></button>
+                        <button class="delete"></button>
+                    </div>
+                </div>
+
+                <div class="todo-item">
+                    <label>
+                        <input type="checkbox">
+                        <span class="bubble business"></span>
+
+                    </label>
+                    <div class="todo-content">
+                        <input type="text" value="limpar o quarto" readonly>
+                    </div>
+
+                    <div class="actions">
+                        <button class="edit"></button>
+                        <button class="delete"></button>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
