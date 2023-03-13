@@ -24,7 +24,7 @@ input:not([type="radio"]):not([type="checkbox"]), button{
 }
 
 body{
-    background-color: var(--container-color);
+    background-color: var(--container-color) !important;
     color: var(--text-color);
 }
 
@@ -36,14 +36,14 @@ section{
 }
 
 h3{
-    color: var(--text-color);
+    color: var(--text-color) !important;
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: .5rem;
 }
 
 h4{
-    color: #888;
+    color: #888 !important;
     font-size: 0.875rem;
     font-weight: 700;
     margin-bottom: .5rem;
@@ -57,6 +57,7 @@ h4{
     margin-left: .5rem;
     flex: 1 1 0%;
     min-width: 0;
+    max-width: 50%;
 }
 
 .greeting .title, 
@@ -83,6 +84,9 @@ h4{
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
     margin-bottom: 1.5rem;
+    /* display: flex ;
+    justify-content: center;
+    align-items: center; */
 }
 
 .create-todo .options label{
@@ -95,6 +99,7 @@ h4{
     color: var(--text-color);
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.212);
     border-radius: .5rem;
+    /* width: 400px; */
 }
 
 input[type="radio"],
@@ -160,6 +165,7 @@ input:checked ~ .bubble::after{
 }
 
 .todo-list .list{
+    margin-top: 1rem;
     margin: 1rem 0;
 }
 
@@ -221,3 +227,45 @@ input:checked ~ .bubble::after{
     text-decoration: line-through;
     color: #888;
 }
+
+
+
+
+
+/* FOR SMALL DEVICES */
+@media screen and (max-width: 492px){
+    .edit{
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: .2rem;
+        padding-right: .2rem;
+        font-size: .8rem;
+        height: 30px;
+        position: absolute;
+        right: 30%;
+        background-color: rgb(255, 228, 78);
+        color: black;
+    }
+    
+    .delete{
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: .2rem;
+        padding-right: .2rem;
+        font-size: .8rem;
+        height: 30px;
+        position: absolute;
+        right: 10%;
+        background-color: rgb(255, 78, 78);
+        color: black;
+    }
+
+    .todo-item .todo-content input{
+        color: white;
+        font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (min-width: 780px){
+
+  }
