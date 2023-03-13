@@ -141,7 +141,7 @@ function DisplayTodos () {
 		})
 
 	})
-const modalViews = document.querySelectorAll('.services__modal')
+    const modalViews = document.querySelectorAll('.services__modal')
 const modalBtns = document.querySelectorAll('.edit')
 const modalClose = document.querySelectorAll('.services__modal-close')
 
@@ -152,7 +152,7 @@ let modal = function(modalClick){
 modalBtns.forEach((mb,i)=>{
     mb.addEventListener('click', () =>{
         modal(i)
-        console.log(i)
+        console.log(mb)
         
     }
 )})
