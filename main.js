@@ -83,8 +83,13 @@ function DisplayTodos () {
         content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
 		edit.innerHTML = 'Ver';
 		deleteButton.innerHTML = 'Deletar';
-
-    title.innerHTML =`${todo.category}`
+    if(todo.category == "personal"){
+        var cat = "Pessoal"
+    } else if(todo.category == "business"){
+        var cat = "Trabalho"
+    }
+    title.innerHTML =`${cat}`
+    
     modalInfo.innerHTML=`${todo.content}`
 
 		label.appendChild(input);
