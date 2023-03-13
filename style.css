@@ -1,1 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
+}
+:root{
+--first-hue: 250;
+--sat: 66%;
+--lig: 75%;
+--second-hue: 219;
+--first-color:#0FC2C0;
+--container-color: hsl(var(--second-hue), 32%, 12%);
+--text-color: hsl(var(--second-hue), 8%, 75%);
+}
+input:not([type="radio"]):not([type="checkbox"]), button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+body{
+    background-color: var(--container-color);
+    color: var(--text-color);
+}
+
+section{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1.5rem;
+    padding-right: 1.5em;
+}
+
+h3{
+    color: var(--text-color);
+}
