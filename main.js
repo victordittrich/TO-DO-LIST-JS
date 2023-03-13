@@ -1,3 +1,4 @@
+
 window.addEventListener('load', () => {
 	todos = JSON.parse(localStorage.getItem('todos')) || [];
 	const nameInput = document.querySelector('#name');
@@ -49,6 +50,13 @@ function DisplayTodos () {
 		const actions = document.createElement('div');
 		const edit = document.createElement('button');
 		const deleteButton = document.createElement('button');
+        const modal = document.createElement('div');
+        const modalContent = document.createElement('div');
+        const close = document.createElement('i');
+        const title = document.createElement('h3');
+        const modalList = document.createElement('ul');
+        const modalItem = document.createElement('li');
+        const modalInfo = document.createElement('p');
 
 		input.type = 'checkbox';
 		input.checked = todo.done;
@@ -63,9 +71,21 @@ function DisplayTodos () {
 		edit.classList.add('edit');
 		deleteButton.classList.add('delete');
 
-		content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
-		edit.innerHTML = 'Editar';
+        modal.classList.add('services__modal')
+        title.classList.add('services__modal-title')
+        modalContent.classList.add('services__modal-content')
+        modalContent.classList.add('services__modal-content')
+        close.classList.add('bx', 'bx-x', 'services__modal-close')
+        modalList.classList.add('services__modal-list')
+        modalItem.classList.add('services__modal-item')
+        modalInfo.classList.add('services__modal-info')
+
+        content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+		edit.innerHTML = 'Ver';
 		deleteButton.innerHTML = 'Deletar';
+
+    title.innerHTML =`${todo.content}`
+    modalInfo.innerHTML="isso é apenas um teste ok"
 
 		label.appendChild(input);
 		label.appendChild(span);
@@ -74,7 +94,13 @@ function DisplayTodos () {
 		todoItem.appendChild(label);
 		todoItem.appendChild(content);
 		todoItem.appendChild(actions);
-
+        todoItem.appendChild(modal);
+        modal.appendChild(modalContent);
+        modalContent.appendChild(close);
+        modalContent.appendChild(title);
+        modalContent.appendChild(modalList);
+        modalList.appendChild(modalItem);
+        modalItem.appendChild(modalInfo);
 		todoList.appendChild(todoItem);
 
 		if (todo.done) {
@@ -95,18 +121,18 @@ function DisplayTodos () {
 
 		})
 
-		edit.addEventListener('click', (e) => {
-			const input = content.querySelector('input');
-			input.removeAttribute('readonly');
-			input.focus();
-			input.addEventListener('blur', (e) => {
-				input.setAttribute('readonly', true);
-				todo.content = e.target.value;
-				localStorage.setItem('todos', JSON.stringify(todos));
-				DisplayTodos()
+		// edit.addEventListener('click', (e) => {
+		// 	const input = content.querySelector('input');
+		// 	input.removeAttribute('readonly');
+		// 	input.focus();
+		// 	input.addEventListener('blur', (e) => {
+		// 		input.setAttribute('readonly', true);
+		// 		todo.content = e.target.value;
+		// 		localStorage.setItem('todos', JSON.stringify(todos));
+		// 		DisplayTodos()
 
-			})
-		})
+		// 	})
+		// })
 
 		deleteButton.addEventListener('click', (e) => {
 			todos = todos.filter(t => t != todo);
@@ -115,4 +141,33 @@ function DisplayTodos () {
 		})
 
 	})
+const modalViews = document.querySelectorAll('.services__modal')
+const modalBtns = document.querySelectorAll('.edit')
+const modalClose = document.querySelectorAll('.services__modal-close')
+
+let modal = function(modalClick){
+    modalViews[modalClick].classList.add('active-modal')
 }
+
+modalBtns.forEach((mb,i)=>{
+    mb.addEventListener('click', () =>{
+        modal(i)
+        console.log(i)
+        
+    }
+)})
+
+
+
+modalClose.forEach((mc) =>{
+    mc.addEventListener('click', () =>{
+        modalViews.forEach((mv) =>{
+            mv.classList.remove('active-modal')
+        })
+    })
+})
+
+}
+
+
+
