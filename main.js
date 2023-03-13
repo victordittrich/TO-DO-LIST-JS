@@ -84,8 +84,8 @@ function DisplayTodos () {
 		edit.innerHTML = 'Ver';
 		deleteButton.innerHTML = 'Deletar';
 
-    title.innerHTML =`${todo.content}`
-    modalInfo.innerHTML="isso é apenas um teste ok"
+    title.innerHTML =`${todo.category}`
+    modalInfo.innerHTML=`${todo.content}`
 
 		label.appendChild(input);
 		label.appendChild(span);

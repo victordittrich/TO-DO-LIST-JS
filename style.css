@@ -270,6 +270,8 @@ h3{
     background-color: var(--container-color);
     border-radius: 1.5rem;
     padding: 2rem 2rem 2rem 2rem;
+    height: 300px;
+    width: 300px;
   }
   
   .services__modal-title,
@@ -279,8 +281,10 @@ h3{
   
   .services__modal-title{
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: rgb(255, 255, 255);
     margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-weight: bold;
   }
   
   .services__modal-description{
@@ -306,7 +310,9 @@ h3{
   }
   
   .services__modal-info{
-    font-size: 20px;
+    font-size: 18px;
+    margin-top: 1rem;
+    color:var(--text-color);
   }
   
   .services__modal-close{
