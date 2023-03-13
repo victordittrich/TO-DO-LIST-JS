@@ -105,6 +105,7 @@ h4{
 input[type="radio"],
 input[type="checkbox"]{
     display: none;
+    cursor: pointer;
 }
 
 .bubble{
@@ -220,7 +221,7 @@ input:checked ~ .bubble::after{
 .todo-item .actions .delete{
     margin-right: .5rem;
     background-color: rgb(255, 78, 78);
-    color: black;
+    color: black; 
 }
 
 .todo-item.done .todo-content input{
@@ -228,6 +229,20 @@ input:checked ~ .bubble::after{
     color: #888;
 }
 
+.options{
+    margin-top: 1rem;
+}
+
+.tt{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+    width: auto;
+}
 
 
 
@@ -267,5 +282,35 @@ input:checked ~ .bubble::after{
   }
 
   @media screen and (min-width: 780px){
+    .create-todo input[type="submit"]{
+        width: 50%;
+    }
 
+    .input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .create-todo .options label{
+        width: 400px;
+    }
+    .create-todo .options{
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .catg{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h4{
+        width: auto;
+    }
+    
   }
